@@ -1523,7 +1523,7 @@ describe("scoped private packages", () => {
         expect.arrayContaining([
           {
             name: "AWS CodeArtifact Login",
-            run: "yarn run ca:login",
+            run: "npx projen ca:login",
             env: {
               AWS_ACCESS_KEY_ID: secretToString(defaultAccessKeyIdSecret),
               AWS_SECRET_ACCESS_KEY: secretToString(
@@ -1551,7 +1551,7 @@ describe("scoped private packages", () => {
         expect.arrayContaining([
           {
             name: "AWS CodeArtifact Login",
-            run: "yarn run ca:login",
+            run: "npx projen ca:login",
             env: {
               AWS_ACCESS_KEY_ID: secretToString(defaultAccessKeyIdSecret),
               AWS_SECRET_ACCESS_KEY: secretToString(
@@ -1614,7 +1614,7 @@ describe("scoped private packages", () => {
           },
           {
             name: "AWS CodeArtifact Login",
-            run: "yarn run ca:login",
+            run: "npx projen ca:login",
           },
           {
             name: "Install dependencies",
@@ -1652,7 +1652,7 @@ describe("scoped private packages", () => {
           },
           {
             name: "AWS CodeArtifact Login",
-            run: "yarn run ca:login",
+            run: "npx projen ca:login",
           },
           {
             name: "Install dependencies",
@@ -1707,7 +1707,7 @@ describe("scoped private packages", () => {
       expect.arrayContaining([
         {
           name: "AWS CodeArtifact Login",
-          run: "yarn run ca:login",
+          run: "npx projen ca:login",
           env: {
             AWS_ACCESS_KEY_ID: secretToString(defaultAccessKeyIdSecret),
             AWS_SECRET_ACCESS_KEY: secretToString(defaultSecretAccessKeySecret),
@@ -1742,7 +1742,7 @@ describe("scoped private packages", () => {
       expect.arrayContaining([
         {
           name: "AWS CodeArtifact Login",
-          run: "yarn run ca:login",
+          run: "npx projen ca:login",
           env: {
             AWS_ACCESS_KEY_ID: secretToString(accessKeyIdSecret),
             AWS_SECRET_ACCESS_KEY: secretToString(secretAccessKeySecret),
@@ -1789,7 +1789,7 @@ describe("scoped private packages", () => {
         },
         {
           name: "AWS CodeArtifact Login",
-          run: "yarn run ca:login",
+          run: "npx projen ca:login",
         },
         {
           name: "Install dependencies",

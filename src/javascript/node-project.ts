@@ -1143,6 +1143,23 @@ export class NodeProject extends GitHubProject {
       authProvider: codeArtifactOptions?.authProvider,
     };
 
+    function executeCommand(packageManager: NodePackageManager): string {
+      switch (packageManager) {
+        case NodePackageManager.NPM:
+        case NodePackageManager.YARN:
+        case NodePackageManager.YARN_CLASSIC:
+          return "npx";
+        case NodePackageManager.PNPM:
+          return "pnpm dlx";
+        case NodePackageManager.YARN2:
+        case NodePackageManager.YARN_BERRY:
+          return "yarn dlx";
+        case NodePackageManager.BUN:
+          return "bunx";
+      }
+    }
+    const executeProjenCommand = `${executeCommand(this.packageManager)} projen`;
+
     if (
       parsedCodeArtifactOptions.authProvider ===
       NodePackageCodeArtifactAuthProvider.GITHUB_OIDC
@@ -1159,7 +1176,7 @@ export class NodeProject extends GitHubProject {
         },
         {
           name: "AWS CodeArtifact Login",
-          run: `${this.runScriptCommand} ca:login`,
+          run: `${executeProjenCommand} ca:login`,
         },
       ];
     }
@@ -1183,7 +1200,7 @@ export class NodeProject extends GitHubProject {
         },
         {
           name: "AWS CodeArtifact Login",
-          run: `${this.runScriptCommand} ca:login`,
+          run: `${executeProjenCommand} ca:login`,
         },
       ];
     }
@@ -1191,7 +1208,7 @@ export class NodeProject extends GitHubProject {
     return [
       {
         name: "AWS CodeArtifact Login",
-        run: `${this.runScriptCommand} ca:login`,
+        run: `${executeProjenCommand} ca:login`,
         env: {
           AWS_ACCESS_KEY_ID: secretToString(
             parsedCodeArtifactOptions.accessKeyIdSecret,
