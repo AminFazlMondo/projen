@@ -1918,7 +1918,7 @@ describe("scoped private packages", () => {
     });
   });
 
-  test('adds AWS Code Artifact Login step prior to install to workflow with specific package manager command when package manager is pnpm', () => {
+  test("adds AWS Code Artifact Login step prior to install to workflow with specific package manager command when package manager is pnpm", () => {
     const project = new TestNodeProject({
       scopedPackagesOptions: [
         {
@@ -1931,15 +1931,15 @@ describe("scoped private packages", () => {
     const output = synthSnapshot(project);
 
     const expectedSteps = [
-        {
-          name: "AWS CodeArtifact Login",
-          run: "pnpm dlx projen ca:login",
-          env: {
-            AWS_ACCESS_KEY_ID: secretToString(defaultAccessKeyIdSecret),
-            AWS_SECRET_ACCESS_KEY: secretToString(defaultSecretAccessKeySecret),
-          },
+      {
+        name: "AWS CodeArtifact Login",
+        run: "pnpm dlx projen ca:login",
+        env: {
+          AWS_ACCESS_KEY_ID: secretToString(defaultAccessKeyIdSecret),
+          AWS_SECRET_ACCESS_KEY: secretToString(defaultSecretAccessKeySecret),
         },
-      ]
+      },
+    ];
     const releaseWorkflow = yaml.parse(output[".github/workflows/release.yml"]);
     const buildWorkflow = yaml.parse(output[".github/workflows/build.yml"]);
     expect(releaseWorkflow.jobs.release.steps).toEqual(
@@ -1948,7 +1948,7 @@ describe("scoped private packages", () => {
     expect(buildWorkflow.jobs.build.steps).toEqual(
       expect.arrayContaining(expectedSteps),
     );
-  })
+  });
 });
 
 test("sets resolution-mode to highest by default for pnpm < 10", () => {

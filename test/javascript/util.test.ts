@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from "fs";
 import * as path from "path";
+import { NodePackageManager } from "../../src/javascript";
 import {
   tryResolveModule,
   tryResolveModuleManifestPath,
@@ -13,7 +14,6 @@ import {
   executeCommandPriorInstallation,
 } from "../../src/javascript/util";
 import { mkdtemp } from "../util";
-import { NodePackageManager } from "../../src/javascript";
 
 describe("tryResolveModule", () => {
   test.each([
@@ -199,7 +199,10 @@ test.each([
   [NodePackageManager.YARN2, "yarn dlx"],
   [NodePackageManager.PNPM, "pnpm dlx"],
   [NodePackageManager.BUN, "bunx"],
-])('executeCommandPriorInstallation(%p) should return %p', (packageManager: NodePackageManager, expectedCommand: string)=> {
-  const result = executeCommandPriorInstallation(packageManager);
-  expect(result).toBe(expectedCommand);
-})
+])(
+  "executeCommandPriorInstallation(%p) should return %p",
+  (packageManager: NodePackageManager, expectedCommand: string) => {
+    const result = executeCommandPriorInstallation(packageManager);
+    expect(result).toBe(expectedCommand);
+  },
+);
