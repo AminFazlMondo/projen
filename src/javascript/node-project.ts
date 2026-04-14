@@ -27,7 +27,12 @@ import type {
 import { AutoMerge, GitHub, GitHubProject } from "../github";
 import type { BiomeOptions } from "./biome/biome";
 import { Biome } from "./biome/biome";
-import { execCommand, isYarnBerry, isYarnClassic } from "./util";
+import {
+  execCommand,
+  executeCommandPriorInstallation,
+  isYarnBerry,
+  isYarnClassic,
+} from "./util";
 import { DEFAULT_GITHUB_ACTIONS_USER } from "../github/constants";
 import { ensureNotHiddenPath, secretToString } from "../github/private/util";
 import type {
@@ -1143,22 +1148,7 @@ export class NodeProject extends GitHubProject {
       authProvider: codeArtifactOptions?.authProvider,
     };
 
-    function executeCommand(packageManager: NodePackageManager): string {
-      switch (packageManager) {
-        case NodePackageManager.NPM:
-        case NodePackageManager.YARN:
-        case NodePackageManager.YARN_CLASSIC:
-          return "npx";
-        case NodePackageManager.PNPM:
-          return "pnpm dlx";
-        case NodePackageManager.YARN2:
-        case NodePackageManager.YARN_BERRY:
-          return "yarn dlx";
-        case NodePackageManager.BUN:
-          return "bunx";
-      }
-    }
-    const executeProjenCommand = `${executeCommand(this.packageManager)} projen`;
+    const executeProjenCommand = `${executeCommandPriorInstallation(this.packageManager)} projen`;
 
     if (
       parsedCodeArtifactOptions.authProvider ===
