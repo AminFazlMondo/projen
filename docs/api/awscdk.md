@@ -248,6 +248,7 @@ new awscdk.AwsCdkConstructLibrary(options: AwsCdkConstructLibraryOptions)
 | <code><a href="#projen.awscdk.AwsCdkConstructLibrary.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#projen.awscdk.AwsCdkConstructLibrary.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#projen.awscdk.AwsCdkConstructLibrary.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#projen.awscdk.AwsCdkConstructLibrary.getScopedPackageSteps">getScopedPackageSteps</a></code> | Get steps for scoped package access. |
 | <code><a href="#projen.awscdk.AwsCdkConstructLibrary.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#projen.awscdk.AwsCdkConstructLibrary.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#projen.awscdk.AwsCdkConstructLibrary.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
@@ -720,6 +721,22 @@ DEPRECATED.
 ###### `commands`<sup>Required</sup> <a name="commands" id="projen.awscdk.AwsCdkConstructLibrary.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
+
+---
+
+##### `getScopedPackageSteps` <a name="getScopedPackageSteps" id="projen.awscdk.AwsCdkConstructLibrary.getScopedPackageSteps"></a>
+
+```typescript
+public getScopedPackageSteps(codeArtifactOptions?: CodeArtifactOptions): JobStep[]
+```
+
+Get steps for scoped package access.
+
+###### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="projen.awscdk.AwsCdkConstructLibrary.getScopedPackageSteps.parameter.codeArtifactOptions"></a>
+
+- *Type:* projen.javascript.CodeArtifactOptions
+
+Details of logging in to AWS.
 
 ---
 
@@ -5182,6 +5199,7 @@ new awscdk.AwsCdkTypeScriptApp(options: AwsCdkTypeScriptAppOptions)
 | <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.getScopedPackageSteps">getScopedPackageSteps</a></code> | Get steps for scoped package access. |
 | <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#projen.awscdk.AwsCdkTypeScriptApp.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
@@ -5653,6 +5671,22 @@ DEPRECATED.
 ###### `commands`<sup>Required</sup> <a name="commands" id="projen.awscdk.AwsCdkTypeScriptApp.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
+
+---
+
+##### `getScopedPackageSteps` <a name="getScopedPackageSteps" id="projen.awscdk.AwsCdkTypeScriptApp.getScopedPackageSteps"></a>
+
+```typescript
+public getScopedPackageSteps(codeArtifactOptions?: CodeArtifactOptions): JobStep[]
+```
+
+Get steps for scoped package access.
+
+###### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="projen.awscdk.AwsCdkTypeScriptApp.getScopedPackageSteps.parameter.codeArtifactOptions"></a>
+
+- *Type:* projen.javascript.CodeArtifactOptions
+
+Details of logging in to AWS.
 
 ---
 
@@ -7344,6 +7378,7 @@ new awscdk.ConstructLibraryAws(options: AwsCdkConstructLibraryOptions)
 | <code><a href="#projen.awscdk.ConstructLibraryAws.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#projen.awscdk.ConstructLibraryAws.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#projen.awscdk.ConstructLibraryAws.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#projen.awscdk.ConstructLibraryAws.getScopedPackageSteps">getScopedPackageSteps</a></code> | Get steps for scoped package access. |
 | <code><a href="#projen.awscdk.ConstructLibraryAws.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#projen.awscdk.ConstructLibraryAws.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#projen.awscdk.ConstructLibraryAws.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
@@ -7816,6 +7851,22 @@ DEPRECATED.
 ###### `commands`<sup>Required</sup> <a name="commands" id="projen.awscdk.ConstructLibraryAws.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
+
+---
+
+##### ~~`getScopedPackageSteps`~~ <a name="getScopedPackageSteps" id="projen.awscdk.ConstructLibraryAws.getScopedPackageSteps"></a>
+
+```typescript
+public getScopedPackageSteps(codeArtifactOptions?: CodeArtifactOptions): JobStep[]
+```
+
+Get steps for scoped package access.
+
+###### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="projen.awscdk.ConstructLibraryAws.getScopedPackageSteps.parameter.codeArtifactOptions"></a>
+
+- *Type:* projen.javascript.CodeArtifactOptions
+
+Details of logging in to AWS.
 
 ---
 

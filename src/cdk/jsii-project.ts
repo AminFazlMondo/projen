@@ -550,6 +550,12 @@ export class JsiiProject extends TypeScriptProject {
       });
     }
 
+    if (this.package.codeArtifactOptions) {
+      bootstrapSteps.push(
+        ...this.getScopedPackageSteps(this.package.codeArtifactOptions),
+      );
+    }
+
     // Installation steps before packaging, but after checkout
     packagingSteps.push(
       {
