@@ -61,7 +61,6 @@ new cdktf.ConstructLibraryCdktf(options: ConstructLibraryCdktfOptions)
 | <code><a href="#projen.cdktf.ConstructLibraryCdktf.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#projen.cdktf.ConstructLibraryCdktf.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#projen.cdktf.ConstructLibraryCdktf.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#projen.cdktf.ConstructLibraryCdktf.getScopedPackageSteps">getScopedPackageSteps</a></code> | Get steps for scoped package access. |
 | <code><a href="#projen.cdktf.ConstructLibraryCdktf.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#projen.cdktf.ConstructLibraryCdktf.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#projen.cdktf.ConstructLibraryCdktf.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
@@ -532,22 +531,6 @@ DEPRECATED.
 ###### `commands`<sup>Required</sup> <a name="commands" id="projen.cdktf.ConstructLibraryCdktf.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
-
----
-
-##### `getScopedPackageSteps` <a name="getScopedPackageSteps" id="projen.cdktf.ConstructLibraryCdktf.getScopedPackageSteps"></a>
-
-```typescript
-public getScopedPackageSteps(codeArtifactOptions?: CodeArtifactOptions): JobStep[]
-```
-
-Get steps for scoped package access.
-
-###### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="projen.cdktf.ConstructLibraryCdktf.getScopedPackageSteps.parameter.codeArtifactOptions"></a>
-
-- *Type:* projen.javascript.CodeArtifactOptions
-
-Details of logging in to AWS.
 
 ---
 

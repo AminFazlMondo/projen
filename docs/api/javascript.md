@@ -2523,7 +2523,6 @@ new javascript.NodeProject(options: NodeProjectOptions)
 | <code><a href="#projen.javascript.NodeProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#projen.javascript.NodeProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#projen.javascript.NodeProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#projen.javascript.NodeProject.getScopedPackageSteps">getScopedPackageSteps</a></code> | Get steps for scoped package access. |
 | <code><a href="#projen.javascript.NodeProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#projen.javascript.NodeProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#projen.javascript.NodeProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
@@ -2994,22 +2993,6 @@ DEPRECATED.
 ###### `commands`<sup>Required</sup> <a name="commands" id="projen.javascript.NodeProject.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
-
----
-
-##### `getScopedPackageSteps` <a name="getScopedPackageSteps" id="projen.javascript.NodeProject.getScopedPackageSteps"></a>
-
-```typescript
-public getScopedPackageSteps(codeArtifactOptions?: CodeArtifactOptions): JobStep[]
-```
-
-Get steps for scoped package access.
-
-###### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="projen.javascript.NodeProject.getScopedPackageSteps.parameter.codeArtifactOptions"></a>
-
-- *Type:* <a href="#projen.javascript.CodeArtifactOptions">CodeArtifactOptions</a>
-
-Details of logging in to AWS.
 
 ---
 
