@@ -305,7 +305,7 @@ describe("JsiiProject with Release to CodeArtifact", () => {
         codeArtifactOptions: {
           roleToAssume,
         },
-      }
+      },
     });
 
     const output = synthSnapshot(project);
@@ -331,5 +331,5 @@ describe("JsiiProject with Release to CodeArtifact", () => {
 
     const releaseWorkflow = YAML.parse(output[".github/workflows/release.yml"]);
     expect(releaseWorkflow.jobs.release_pypi.steps).toEqual(expectedSteps);
-  })
+  });
 });

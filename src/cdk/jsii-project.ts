@@ -10,7 +10,7 @@ import { WorkflowSteps } from "../github/workflow-steps";
 import type { Job, Step, Tools } from "../github/workflows-model";
 import { JobPermission } from "../github/workflows-model";
 import { NodePackageManager } from "../javascript";
-import { isYarnBerry } from "../javascript/util";
+import { getScopedPackageWorkflowSteps, isYarnBerry } from "../javascript/util";
 import type {
   CodeArtifactOptions,
   CommonPublishOptions,
@@ -611,7 +611,12 @@ export class JsiiProject extends TypeScriptProject {
     }
 
     if (codeArtifactOptions) {
-      bootstrapSteps.push(...this.getScopedPackageSteps(codeArtifactOptions));
+      bootstrapSteps.push(
+        ...getScopedPackageWorkflowSteps(
+          this.package.packageManager,
+          codeArtifactOptions,
+        ),
+      );
     }
 
     // Installation steps before packaging, but after checkout
