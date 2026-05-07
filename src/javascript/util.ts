@@ -444,7 +444,6 @@ export function installedVersionProbablyMatches(
  * @param packageManager The package manager being used (e.g., npm, yarn, pnpm, bun).
  * @param codeArtifactOptions The options for AWS CodeArtifact authentication and configuration.
  * @returns An array of JobStep objects representing the necessary steps to authenticate and install from AWS CodeArtifact.
- * @throws Will throw an error if the CodeArtifact registry URL does not match the expected pattern for extracting details.
  */
 export function getScopedPackageWorkflowSteps(
   packageManager: NodePackageManager,
